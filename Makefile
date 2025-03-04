@@ -6,8 +6,7 @@ LFLAGS = -lreadline -lncurses
 
 UNAME_S := $(shell uname -s)
 
-SRCS =  readline/readline.c\
-		parsing/ft_split.c\
+SRCS := $(shell find . -name "*.c" ! -path "./tests/*")
 
 OBJS = $(SRCS:.c=.o)
 
