@@ -4,12 +4,12 @@
 typedef struct s_token{
 	int		type;
 	char	*content;
-}
+}	t_token;
 
 enum e_token_type {
 	
 	//Basic elements 
-	WORD,			//Commands and arguments
+	WORD,			// Commands and arguments
 	ASSIGNMENT,		// Variable assignments 
 
 	//Quotes
@@ -33,16 +33,15 @@ enum e_token_type {
 	PAREN_CLOSE,	// )
 
 	//Special caracters
-	ENV_VAR,		//$VAR
-	EXIT_STATUS,	//$?
+	ENV_VAR,		// $VAR
+	EXIT_STATUS,	// $?
 	ESCAPE,			// \ (backslash)
 	COMMENT,		// #
 	T_NEWLINE,		// End of command
-	T_EOF,			//End of input
+	T_EOF,			// End of input
 
 	//Error handling
-	UNKNOWN
-
+	UNKNOWN,,    
 };
 
 int count_words(char *str, char delimiter);
