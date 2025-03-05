@@ -14,12 +14,14 @@
 
 //Token structure
 typedef struct s_token{
-	int		type;
-	char	*content;
+	token_type	type;
+	char		*content;
+	t_token		*next;
+	t_token		*prev;
 }	t_token;
 
 //Input typology
-enum e_token_type {
+typedef enum {
 	
 	//Basic elements 
 	WORD,			// Commands and arguments
@@ -30,6 +32,7 @@ enum e_token_type {
 	DOUBLE_QUOTE,	// "string"
 
 	//Redirections
+	REDIR,
 	REDIR_IN, 		// <
 	REDIR_OUT,		// >
 	REDIR_APPEND,	// >>
@@ -54,7 +57,7 @@ enum e_token_type {
 	T_EOF,			// End of input
 
 	//Error handling
-	UNKNOWN,  
-};
+	UNKNOWN 
+}	token_type;
 
 #endif 
